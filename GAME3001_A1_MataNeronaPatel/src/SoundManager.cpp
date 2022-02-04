@@ -143,7 +143,7 @@ void SoundManager::panSet(const int amount, const int channel)
 	std::cout << "Pan:" << amount << std::endl;
 	m_pan = std::max(0, std::min(amount, 100)); // Old clamp.
 	std::cout << "Pan:" << m_pan << std::endl;
-	const int leftVol = (255 * std::min((m_pan - 100.0) / (50.0 - 100.0), 1.0)); // z-min/max-min
+	const int leftVol = (255 * std::min(m_pan / 50.0, 1.0)); // z-min/max-min
 	std::cout << "Left:" << leftVol << std::endl;
 	const int rightVol = (255 * std::min(m_pan / 50.0, 1.0));
 	std::cout << "Right:" << rightVol << std::endl;
