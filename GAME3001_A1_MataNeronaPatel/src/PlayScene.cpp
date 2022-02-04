@@ -11,6 +11,11 @@
 PlayScene::PlayScene()
 {
 	PlayScene::start();
+	SoundManager::Instance();
+	SoundManager::Instance().load("../Assets/audio/explosion.wav", "explosion", SOUND_SFX);
+	SoundManager::Instance().load("../Assets/audio/laserShoot.wav", "laserShoot", SOUND_SFX);
+	SoundManager::Instance().load("..?Assets/audio/rush.mp3", "rush", SOUND_MUSIC);
+
 }
 
 PlayScene::~PlayScene()
@@ -118,7 +123,7 @@ void PlayScene::start()
 	//addChild(m_pNextButton);
 
 	/* Instructions Label */
-	m_pInstructionsLabel = new Label("Press 1 to Seek, Press 2 to Flee, Press 3 for Arrival, Press 4 for Obstacle Avoidance", "Consolas");
+	m_pInstructionsLabel = new Label("Press 1 to Seek, 2 to Flee, 3 for Arrival, and 4 Obstacle Avoidance", "Consolas");
 	m_pInstructionsLabel->getTransform()->position = glm::vec2(Config::SCREEN_WIDTH * 0.5f, 500.0f);
 
 	addChild(m_pInstructionsLabel);
