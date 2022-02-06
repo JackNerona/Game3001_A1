@@ -9,7 +9,7 @@ Actor::Actor()
 	const auto size = TextureManager::Instance().getTextureSize("Actor");
 	setWidth(size.x);
 	setHeight(size.y);
-	getTransform()->position = glm::vec2(600.0f, 1400.0f);
+	getTransform()->position = glm::vec2(600.0f, 400.0f);
 	getRigidBody()->velocity = glm::vec2(0, 0);
 	getRigidBody()->isColliding = false;
 
