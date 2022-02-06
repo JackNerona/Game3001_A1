@@ -13,7 +13,7 @@ Actor::Actor()
 	getRigidBody()->velocity = glm::vec2(0, 0);
 	getRigidBody()->isColliding = false;
 
-	setType(ACTOR);
+	setType(TARGET);
 }
 
 Actor::~Actor()
