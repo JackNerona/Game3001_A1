@@ -48,21 +48,64 @@ void PlayScene::handleEvents()
 	if (EventManager::Instance().isKeyDown(SDL_SCANCODE_1))
 	{
 		//Seek
+		m_pTarget = new Target();
+		m_pTarget->getRigidBody()->velocity = glm::vec2(0.5f, 0.0f);
+		addChild(m_pTarget);
+
+		m_pActor = new Actor();
+		addChild(m_pActor);
+
+		SoundManager::Instance().setAllVolume(8);
+
+		SoundManager::Instance().playSound("laserShoot", 0, -1);
 	}
 
 	if (EventManager::Instance().isKeyDown(SDL_SCANCODE_2))
 	{
 		//Flee
+		m_pTarget = new Target();
+		m_pTarget->getRigidBody()->velocity = glm::vec2(0.5f, 0.0f);
+		addChild(m_pTarget);
+
+		m_pActor = new Actor();
+		addChild(m_pActor);
+
+		SoundManager::Instance().setAllVolume(8);
+
+		SoundManager::Instance().playSound("laserShoot", 0, -1);
+
 	}
 
 	if (EventManager::Instance().isKeyDown(SDL_SCANCODE_3))
 	{
 		//Arrival
+		m_pTarget = new Target();
+		m_pTarget->getRigidBody()->velocity = glm::vec2(0.5f, 0.0f);
+		addChild(m_pTarget);
+
+		m_pActor = new Actor();
+		addChild(m_pActor);
+
+		SoundManager::Instance().setAllVolume(8);
+
+		SoundManager::Instance().playSound("laserShoot", 0, -1);
+
 	}
 
 	if (EventManager::Instance().isKeyDown(SDL_SCANCODE_4))
 	{
 		//Obstacle Avoidance
+		m_pTarget = new Target();
+		m_pTarget->getRigidBody()->velocity = glm::vec2(0.5f, 0.0f);
+		addChild(m_pTarget);
+
+		m_pActor = new Actor();
+		addChild(m_pActor);
+
+		SoundManager::Instance().setAllVolume(8);
+
+		SoundManager::Instance().playSound("laserShoot", 0, -1);
+
 	}
 }
 
@@ -70,9 +113,12 @@ void PlayScene::start()
 {
 	// Set GUI Title
 	m_guiTitle = "Play Scene";
+
+	//m_pTarget = new Target();
 	
 	SoundManager::Instance().load("../Assets/audio/rush.mp3", "rush", SOUND_MUSIC);
 
+	SoundManager::Instance().setAllVolume(32);
 
 	SoundManager::Instance().playMusic("rush", -1);
 
@@ -84,8 +130,6 @@ void PlayScene::start()
 	addChild(m_pInstructionsLabel);
 
 	ImGuiWindowFrame::Instance().setGUIFunction(std::bind(&PlayScene::GUI_Function, this));
-
-	
 }
 
 void PlayScene::GUI_Function() const

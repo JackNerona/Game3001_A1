@@ -3,9 +3,8 @@
 #define __PLAY_SCENE__
 
 #include "Scene.h"
-#include "Plane.h"
-#include "Player.h"
-#include "Button.h"
+#include "Target.h"
+#include "Actor.h"
 #include "Label.h"
 
 class PlayScene : public Scene
@@ -27,13 +26,8 @@ private:
 	
 	glm::vec2 m_mousePosition;
 
-	Plane* m_pPlaneSprite;
-	Player* m_pPlayer;
-	bool m_playerFacingRight;
-
-	// UI Items
-	Button* m_pBackButton;
-	Button* m_pNextButton;
+	Target* m_pTarget;
+	Actor* m_pActor;
 	Label* m_pInstructionsLabel;
 };
 

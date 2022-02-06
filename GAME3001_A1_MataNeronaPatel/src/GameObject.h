@@ -58,6 +58,7 @@ private:
 
 	bool m_enabled;
 	bool m_visible;
+	bool m_isCentered;
 };
 
 #endif /* defined (__GAME_OBJECT__) */
